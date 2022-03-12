@@ -1,5 +1,4 @@
 import jiphy from "../../api/jiphy";
-import { formatTagsOneStringForPutRequest } from "../../utils/utils";
 
 /* Fetch More Assets */
 export const FETCHNEWASSETS_STARTED = "FETCHNEWASSETS_STARTED";
@@ -68,7 +67,6 @@ export const fetchNewAssets = (tagFilterArray = []) => {
           }
         });
 
-      console.log("Fetch new assets", newAssets.data.data);
       const formattedAssets = newAssets.data.data.map(na => {
         return {
           height: na.images.original.height,
@@ -77,7 +75,6 @@ export const fetchNewAssets = (tagFilterArray = []) => {
           gifUrl: na.images.original.url
         }
       })
-      console.log("formatted assets", formattedAssets);
       dispatch(fetchNewAssetsSuccess(formattedAssets));
     } catch (err) {
       dispatch(fetchNewAssetsFailed(err.response));

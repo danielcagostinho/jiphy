@@ -30,19 +30,19 @@ const Gif = (props) => {
   let assetStyles =
     props.parent === "thread"
       ? {
-          height: height,
-          display: loaded && props.isVisible ? "block" : "none",
-          width: width,
-          maxWidth: width,
-          overflow: "hidden",
-        }
+        height: height,
+        display: loaded && props.isVisible ? "block" : "none",
+        width: width,
+        maxWidth: width,
+        overflow: "hidden",
+      }
       : {
-          height: height,
-          display: loaded && props.isVisible ? "block" : "none",
-          width: width,
-          maxWidth: width,
-          overflow: "hidden",
-        };
+        height: height,
+        display: loaded && props.isVisible ? "block" : "none",
+        width: width,
+        maxWidth: width,
+        overflow: "hidden",
+      };
 
   let thumbnailDisplay = (
     <motion.img
@@ -69,9 +69,7 @@ const Gif = (props) => {
       variants={videoVariants}
       onLoad={(response) => {
         setError(checkError(response.target));
-        // setTimeout(() => {
         setLoaded(!checkError(response.target));
-        // }, 2000);
       }}
       key={props.src}
       alt="gif"
@@ -87,8 +85,6 @@ const Gif = (props) => {
   return (
     <AnimatePresence>
       <>
-        {/* {!loaded ? ( */}
-        {/* <AnimatePresence> */}
         {!loaded && (
           <motion.div
             className="GifLoadingBackground"
@@ -100,15 +96,7 @@ const Gif = (props) => {
           >
             <Spinner />
           </motion.div>
-          // ) : (
-          // <motion.div
-          //   className="GifLoadingBackground"
-          //   style={{ height: height, width: width, backgroundColor: "blue" }}
-          // >
-          //   <Spinner />
-          // </motion.div>
         )}
-        {/* </AnimatePresence> */}
         {paused ? thumbnailDisplay : gifDisplay}
       </>
     </AnimatePresence>
