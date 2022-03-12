@@ -38,8 +38,8 @@ const AssetActionSheet = ({ asset, onLikeAsset, dimensions }) => {
   }, []);
 
   return (
-    <div className="AssetActionSheet" style={{ top: dimensions.height - 132 }}>
-      <AssetActionButtons asset={asset} onLikeAsset={onLikeAsset} />
+    <div className="AssetActionSheet" style={{ top: dimensions.height - 52 }}>
+      {/* <AssetActionButtons asset={asset} onLikeAsset={onLikeAsset} /> */}
       <div className={tagClasses} style={flexWrapStyle} ref={tagContainerRef}>
         <div className="TagWrapContainer">{tagDisplay}</div>
         <div className="show-more-container">
