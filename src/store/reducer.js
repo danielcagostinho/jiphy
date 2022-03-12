@@ -26,6 +26,7 @@ const reducer = (state = initialState, action) => {
 
     // Success: Concat the new assets with the assets queue increase the size of the "buffer" by buffer size
     case actionTypes.FETCHNEWASSETS_SUCCESS: {
+      console.log("reducer fetch new assets: ", action.value)
       let newAssets = action.value;
       let assetsLength = state.assetsLength + BUFFER_SIZE;
       let updatedAssetQueue = state.assetQueue.concat(newAssets);

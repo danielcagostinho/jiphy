@@ -70,7 +70,7 @@ const Gif = (props) => {
       onLoad={(response) => {
         setError(checkError(response.target));
         // setTimeout(() => {
-        // setLoaded(!checkError(response.target));
+        setLoaded(!checkError(response.target));
         // }, 2000);
       }}
       key={props.src}

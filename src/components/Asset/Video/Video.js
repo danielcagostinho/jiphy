@@ -71,9 +71,9 @@ const Video = (props) => {
         muted={props.muted}
         style={assetStyles}
         key={props.src}
-        // onLoadedMetadata={(response) => {
-        //   setLoaded(true);
-        // }}
+        onLoadedMetadata={(response) => {
+          setLoaded(true);
+        }}
         ref={videoRef}
       >
         <source src={props.src} type={`video/${props.contentType}`} />

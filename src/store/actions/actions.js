@@ -1,4 +1,4 @@
-import gifsexplorerApi from "../../api/gifsexplorer";
+import jiphy from "../../api/jiphy";
 import { formatTagsOneStringForPutRequest } from "../../utils/utils";
 
 /* Fetch More Assets */
@@ -33,6 +33,7 @@ export const REMOVE_ERROR_ASSET_FAILED = "REMOVE_ERROR_ASSET_FAILED";
 
 export const ASSET_LOAD_AMOUNT = 10;
 
+
 const assetType = "Assets";
 
 const fetchNewAssetsStarted = () => {
@@ -59,17 +60,25 @@ export const fetchNewAssets = (tagFilterArray = []) => {
   return async (dispatch) => {
     dispatch(fetchNewAssetsStarted());
     try {
-      let newAssets = await gifsexplorerApi.put(
-        `/${assetType}/GetAssets/${ASSET_LOAD_AMOUNT}`,
+      let newAssets = await jiphy.get('/trending',
         {
-          tags:
-            tagFilterArray.length === 0
-              ? "[]"
-              : formatTagsOneStringForPutRequest(tagFilterArray.toString()),
-          liked: false,
+          params: {
+            api_key: process.env.REACT_APP_GIPHY_API_KEY,
+            limit: 200
+          }
+        });
+
+      console.log("Fetch new assets", newAssets.data.data);
+      const formattedAssets = newAssets.data.data.map(na => {
+        return {
+          height: na.images.original.height,
+          width: na.images.original.width,
+          tags: "[tag1,tag2,tag4]",
+          gifUrl: na.images.original.url
         }
-      );
-      dispatch(fetchNewAssetsSuccess(newAssets.data));
+      })
+      console.log("formatted assets", formattedAssets);
+      dispatch(fetchNewAssetsSuccess(formattedAssets));
     } catch (err) {
       dispatch(fetchNewAssetsFailed(err.response));
     }
@@ -150,7 +159,7 @@ export const searchTag = (tag) => {
     dispatch(clearQueue());
     try {
       dispatch(searchTagStarted(tag));
-      let filteredAssets = await gifsexplorerApi.get(
+      let filteredAssets = await jiphy.get(
         `/${assetType}/ListByTag/${tag}`
       );
       dispatch(searchTagAction(filteredAssets.data));
