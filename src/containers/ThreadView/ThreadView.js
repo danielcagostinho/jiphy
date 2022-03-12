@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-
-import AssetActionButtons from "../../components/Asset/AssetActionButtons/AssetActionButtons";
-import Asset from "../../components/Asset/Asset";
-import * as actionCreators from "../../store/actions/actions";
 import { connect } from "react-redux";
+import { getFullScreenDimensions } from "../../utils/DimensionHandler";
+import * as actionCreators from "../../store/actions/actions";
+
+import Asset from "../../components/Asset/Asset";
+import NavigationArrow from "../../components/UI/NavigationArrow/NavigationArrow";
 
 import "./ThreadView.scss";
-import { parseSrcString } from "../../utils/utils";
-import { getFullScreenDimensions } from "../../utils/DimensionHandler";
-import NavigationArrow from "../../components/UI/NavigationArrow/NavigationArrow";
 
 class ThreadView extends Component {
   constructor(props) {
@@ -86,18 +84,9 @@ class ThreadView extends Component {
       }
     };
 
-    let parsedUrl, assetType;
-    if (this.state.selectedAsset.contentMp4 !== "") {
-      parsedUrl = parseSrcString(this.state.selectedAsset.contentMp4);
-      assetType = "mp4";
-    } else if (this.state.selectedAsset.contentWebm !== "") {
-      parsedUrl = parseSrcString(this.state.selectedAsset.contentWebm);
-      assetType = "webm";
-    } else {
-      parsedUrl = this.state.selectedAsset.gifUrl;
-      assetType = "gif";
-    }
-
+    let parsedUrl = this.state.selectedAsset.gifUrl;
+    let assetType = "gif";
+  
     let assetDetails = {
       dimensions: {
         width: this.state.width,
@@ -150,12 +139,6 @@ class ThreadView extends Component {
                   disabled={false}
                 />
               </div>
-              <AssetActionButtons
-                asset={this.props.selectedAsset}
-                onLikeAsset={() => {
-                  this.props.onLikeAsset(this.props.selectedAsset);
-                }}
-              />
             </div>
           </div>
         </div>

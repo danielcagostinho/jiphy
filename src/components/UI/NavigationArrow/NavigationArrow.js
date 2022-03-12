@@ -5,8 +5,8 @@ import React from "react";
 import './NavigationArrow.scss';
 
 // Asset Import
-import leftArrow from "../../../assets/icons/arrow-left.png";
-import rightArrow from "../../../assets/icons/arrow-right.png";
+import leftArrow from "../../../assets/icons/arrow-left.svg";
+import rightArrow from "../../../assets/icons/arrow-right.svg";
 
 const NavigationArrow = ({ variant, navigationListener, disabled }) => {
 
