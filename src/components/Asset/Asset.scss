@@ -1,0 +1,16 @@
+.asset {
+  position: relative;
+  // width: 100%;
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  width: 100%;
+
+  img {
+    z-index: 1;
+  }
+
+  video {
+    z-index: 1;
+  }
+}

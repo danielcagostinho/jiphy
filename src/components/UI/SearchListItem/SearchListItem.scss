@@ -1,0 +1,30 @@
+@import '../../../design-tokens/scss-variables';
+
+.search-list-item {
+  // position: fixed;
+  /* Display & Box Model */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 16px;
+  align-items: center;
+  height: 32px;
+  border: 2px solid #222121;
+  background-color: black;
+  color: $secondaryColor;
+
+
+  &:hover {
+    background-color: #222;
+    cursor: pointer;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  &:first-child {
+    border-top: none;
+  }
+}

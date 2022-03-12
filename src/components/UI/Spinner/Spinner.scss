@@ -1,0 +1,12 @@
+@import '../../../design-tokens/scss-variables';
+.spinner {
+  height: 32px;
+  width: 32px;
+}
+
+@media (min-width: $screenWidthSmall) {
+  .spinner {
+    height: 48px;
+    width: 48px;
+  }
+}

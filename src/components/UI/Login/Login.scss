@@ -1,0 +1,95 @@
+@import '../../../design-tokens/scss-variables';
+
+.login {
+  position: absolute;
+  right: 12%;
+  width: 240px;
+  border-radius: 8px;
+  background-color: rgb(17, 16, 16);
+  color: $secondaryColor;
+  form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    label {
+      align-self: flex-start;
+    }
+
+    input {
+      width: 200px;
+      height: 32px;
+      padding-left: 16px;
+      margin: 12px 0;
+
+      border: none;
+      background-color: #222;
+
+      border-radius: 8px;
+
+      color: $secondaryColor;
+      font-size: 14px;
+      font-weight: 500;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $secondaryColor;
+        opacity: 1; /* Firefox */
+      }
+
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $secondaryColor;
+      }
+
+      &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $secondaryColor;
+      }
+    }
+
+    p {
+      align-self: flex-start;
+      color: $secondaryColor;
+      font-size: 16px;
+    }
+
+    a {
+      // align-self: flex-start;
+      color: $primaryColor;
+      font-size: 16px;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .bottom-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+
+      .login-button {
+        // align-self: flex-end;
+        &:hover {
+          cursor: pointer;
+        }
+
+        p {
+          padding: 4px 8px;
+          border: $secondaryColor 1px solid;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}

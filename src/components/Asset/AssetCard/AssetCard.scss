@@ -1,0 +1,62 @@
+@import "../../../design-tokens/scss-variables";
+.asset-container {
+  /* Positioning */
+  position: relative;
+  max-width: 100%;
+
+  /* Display & Box Model */
+  margin-bottom: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.asset-container:hover .asset-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  opacity: 0.5;
+}
+
+.sound-pill {
+  /* Positioning */
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+
+  /* Display & Box Model */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 32px;
+  padding: 4px;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background-color: rgba(63, 63, 63, 0.34);
+  backdrop-filter: blur(54px);
+  color: white;
+
+  i {
+    width: 24px;
+    width: 24px;
+  }
+
+  p {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

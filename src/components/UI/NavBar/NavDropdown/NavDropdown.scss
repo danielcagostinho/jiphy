@@ -1,0 +1,52 @@
+@import "../../../../design-tokens/scss-variables";
+
+$dropdownWidth: 240px;
+$dropdownBackgroundColor: rgb(17, 16, 16);
+
+.NavDropdown {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+
+  .DropdownIconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .DropdownIcon {
+    /* Other */
+    color: $secondaryColor;
+    font-size: 24px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.DropdownContent {
+  /* Positioning */
+  position: fixed;
+  top: $navbarHeight;
+  z-index: 5;
+
+  /* Display & Box Model */
+  width: $dropdownWidth;
+  border-radius: 8px;
+  background-color: $dropdownBackgroundColor;
+  color: $secondaryColor;
+}
+
+.DropdownContentMobile {
+  position: absolute;
+  top: $navLogoFontSize;
+  // right: 0;
+  z-index: 3;
+
+  /* Display & Box Model */
+  width: $dropdownWidth;
+  height: 100vh;
+  border-radius: 8px;
+  background-color: $dropdownBackgroundColor;
+  color: $secondaryColor;
+}

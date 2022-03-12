@@ -1,0 +1,18 @@
+@import "../../design-tokens/scss-variables";
+.AboutPage {
+  .AboutPageContent {
+    max-width: 75vw !important;
+    padding-top: 100px;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: $primaryColor;
+  }
+
+  p {
+    font-size: 16px;
+    color: $primaryColor;
+  }
+}

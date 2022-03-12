@@ -1,0 +1,110 @@
+@import "../../design-tokens/scss-variables.scss";
+
+.TagFilterBanner {
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 64px;
+  z-index: 3;
+
+  /* Display & Box Model */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  margin: 0 auto;
+  background-color: #0d0d0d;
+
+  .TagFilterBannerContent {
+    position: relative;
+    width: 30vw;
+    padding-bottom:16px;
+
+    .TagFilterBannerContentRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .ClearAllFilters {
+        font-size: 16px;
+        color: #719698;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .TagFilterContainer {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      overflow: hidden;
+
+      .show-more-container {
+        position: absolute;
+        right: 0;
+        margin-right: 8px;
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        span {
+          color: $secondaryColor;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .TagFilterWrapContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: calc(100% - 40px);
+        span {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    p {
+      color: #8e8e8e;
+      margin-left: 16px;
+      margin-right: 16px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .clear-icon {
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+  }
+  .hide-extra-content {
+    max-height: 56px;
+  }
+}
+
+@media (min-width: $screenWidthSmall) {
+  .TagFilterBanner {
+    .TagFilterBannerContent {
+      width: 280px !important;
+    }
+  }
+}
+
+@media (min-width: $screenWidthMedium) {
+  .TagFilterBanner {
+    .TagFilterBannerContent {
+      width: $widthTagFilterBannerMedium !important;
+    }
+  }
+}

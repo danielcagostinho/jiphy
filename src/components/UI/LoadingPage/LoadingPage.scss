@@ -1,0 +1,27 @@
+@import '../../../design-tokens/scss-variables';
+
+.loading-page {
+  /* Positioning */
+  position: fixed;
+
+  /* Display & Box Model */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d0d0d;
+  z-index: 1000;
+
+  h1 {
+    margin-bottom: 32px;
+    color: $primaryColor;
+  }
+}
+
+@media (min-width: $screenWidthSmall) {
+  h1 {
+    margin-bottom: 60px;
+  }
+}

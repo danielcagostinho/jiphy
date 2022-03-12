@@ -1,0 +1,56 @@
+@import "../../../design-tokens/scss-variables";
+
+.AssetActionSheet {
+  /* Positioning */
+  position: absolute;
+  // bottom: 0;
+  z-index: 3;
+
+  /* Display & Box Model */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+
+  
+
+  .TagContainer {
+    /* Display & Box Model */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+    background-color: #222121;
+
+    .TagWrapContainer {
+      /* Display & Box Model */
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: calc(100% - 40px);
+      overflow: hidden;
+      background-color: #222121;
+    }
+  }
+
+  .show-more-container {
+    position: absolute;
+    right: 0;
+    margin-right: 8px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span {
+      color: $secondaryColor;
+    }
+  }
+
+  .hide-extra-content {
+    max-height: 52px;
+  }
+}
+
+
