@@ -60,7 +60,6 @@ const NavBar = ({ routes }) => {
   } else {
     navBrand = (
       <div className="NavBrand">
-        {/* <Link to="/" className="NavBrandLink"> */}
         <WithLink destination={"/"} className="NavBrandLink">
           <div className="NavBrandContent">
             <div className="NavBrandLogo">
@@ -75,7 +74,6 @@ const NavBar = ({ routes }) => {
             <div className="NavBrandText">{!IsMobile() && <p>Jiphy</p>}</div>
           </div>
         </WithLink>
-        {/* </Link> */}
       </div>
     );
   }
