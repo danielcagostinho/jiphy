@@ -6,25 +6,17 @@ import logo from "../../../assets/icons/logo.svg";
 import './Spinner.scss';
 
 const Spinner = () => {
-  const spinnerVariants = {
-    start: {
-      y: "0%",
-    },
-    end: {
-      y: "50%",
-    },
-  };
+
   return (
     <div>
-      <motion.img
-        className="spinner"
-        variants={spinnerVariants}
-        initial="start"
-        animate="end"
-        transition={{ duration: 0.6, yoyo: Infinity }}
-        src={logo}
+      <motion.span
+        className="spinner material-icons"
+        animate={{ rotate: -360 }}
+        transition={{ repeat: Infinity, duration: 0.7, repeatDelay: 0.2 }}
         alt="logo"
-      />
+      >
+        restart_alt
+      </motion.span>
     </div>
   );
 };
