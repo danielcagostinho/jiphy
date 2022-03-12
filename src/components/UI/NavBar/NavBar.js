@@ -21,7 +21,7 @@ import * as actions from "../../../store/actions/actions";
 
 // Asset Imports
 import logo from "../../../assets/icons/logo.svg";
-import dice from "../../../assets/icons/dice.png";
+import dice from "../../../assets/icons/dice.svg";
 import WithLink from "../../../HOC/WithLink";
 
 const NavBar = ({ routes }) => {
