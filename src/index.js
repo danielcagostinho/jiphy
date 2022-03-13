@@ -18,7 +18,7 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router basename="/jiphy">
+      <Router basename={process.env.REACT_APP_PUBLIC_URL}>
       <App />
       </Router>
     </Provider>
