@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/jiphy/static/css/main.7e4a278f.css",
-    "main.js": "/jiphy/static/js/main.277cddbd.js",
+    "main.js": "/jiphy/static/js/main.ae9df0a4.js",
     "static/js/787.5b027625.chunk.js": "/jiphy/static/js/787.5b027625.chunk.js",
     "static/media/Roboto-Medium.ttf": "/jiphy/static/media/Roboto-Medium.13a29228654d5c5ec9c4.ttf",
     "static/media/Roboto-Regular.ttf": "/jiphy/static/media/Roboto-Regular.03523cf578d69fa92322.ttf",
@@ -14,11 +14,11 @@
     "static/media/arrow-right.svg": "/jiphy/static/media/arrow-right.3deb9811d82a17435efea68c70b046c6.svg",
     "static/media/arrow-left.svg": "/jiphy/static/media/arrow-left.cd9587b326b677fe1a2f0d8aa438d085.svg",
     "main.7e4a278f.css.map": "/jiphy/static/css/main.7e4a278f.css.map",
-    "main.277cddbd.js.map": "/jiphy/static/js/main.277cddbd.js.map",
+    "main.ae9df0a4.js.map": "/jiphy/static/js/main.ae9df0a4.js.map",
     "787.5b027625.chunk.js.map": "/jiphy/static/js/787.5b027625.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e4a278f.css",
-    "static/js/main.277cddbd.js"
+    "static/js/main.ae9df0a4.js"
   ]
 }
